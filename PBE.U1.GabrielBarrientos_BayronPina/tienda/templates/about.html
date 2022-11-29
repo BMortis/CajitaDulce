@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{% static "css/estilo.css" %}">
+
+    <title>Cajita Dulce</title>
+  </head>
+  <body>
+    <!--NAVBAR -->
+    <nav class="navbar navbar-expand-lg" id="barraDeNavegacion">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static "img/Logo Chiquito.png" %}" alt="Logo" id="logo">Cajita Dulce</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contacto' %}">>Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Contenedor de el logo y breve descripcion -->
+    <div class="container" id="bajoNav">
+      <div class="row">
+        <div class="col-sm-2">
+          <img src="{% static "img/Logo Chiquito.png" %}" alt="Logo" id="logo2" />
+        </div>
+        <div class="col-sm-10" id="titulo">
+          <h1>Trabajamos con dedicacion</h1>
+        </div>
+        <div class="col-sm-12">
+          <p>
+            Nuestros productos son 100% artesanales y fabricados con mucho
+            cariño, buscamos llegar a tu paladar a base de dulzura y productos
+            de buena calidad
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Descripcion de Emprendimiento -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6" id="Sobre">
+          <h4>Sobre Cajita Dulce</h4>
+          <p>
+            Cajita Dulce nace el 2019 a partir de la necesidad de sacar adelante
+            a una familia que recién se estaba conformando, y llegó en el
+            momento justo para alentar todos nuestros desafíos. Al comienzo,
+            esta aventura consistía sólo en una caja de zapatos con bolsas de
+            cuchiflí y cocadas, hechas de forma artesanal y rellenas de
+            esperanza, las que diariamente nos acompañaban a nuestro trabajo.
+            Fue un emprender lleno de miedos, pero también lleno de energía y de
+            fuerte aliento, sabíamos que no sería fácil, pero eso no nos detuvo
+            y seguimos adelante con este pequeño sueño.
+            <br />
+            <br />
+            A pesar de las adversidades, esa caja se transformó en una más
+            grande y voluminosa, que nos fue empujando y permitiendo alcanzar
+            hitos importantes de nuestra vida familiar. Gracias a nuestros
+            dulces logramos el sueño anhelado de la casa propia, y a superar
+            tiempos complejos de inestabilidad laboral y emocional. Tanto así,
+            que se ha vuelto nuestro tesoro, aquello que nos motiva día a día.
+            Nuestra pasión.
+            <br />
+            <br />
+            Hoy Cajita Dulce es un emprendimiento con una clientela fiel y
+            consolidada, que cuenta con una amplia variedad de productos dulces
+            como alfajores, cuchiflí, cocadas, bombones, chocolates, frutos
+            secos, entre otros. Es el resultado de la constancia, la
+            perseverancia y el esfuerzo; es lo que nos lleva todos los días a
+            querer dar lo mejor de nosotros, para dárselo en cada bocado a
+            quienes nos prefieren.
+            <br />
+            <br />
+            En estos días, donde el tiempo pareciera correr cada vez más rápido,
+            Cajita Dulce ofrece una pausa o un respiro, un momento dulce para
+            relajarse y compartir con los seres queridos y, aunque sea breve,
+            disfrutar de aquello en la buena compañía de nuestros ricos
+            productos.
+            <br />
+            <br />
+            Cajita Dulce es el desafío de emprender, de no tener miedo a echar a
+            volar la imaginación, sabiendo que si el cielo es nuestro límite,
+            nosotros iremos más allá.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <img src="{% static "img/imagenCostado.jpg" %}" alt="" />
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- FOOTER -->
+    <footer class="text-center text-white">
+      <!-- Grid container -->
+      <div class="container container-fluid p-2 pb-0 mt-2">
+        <!-- Section: Social media -->
+        <section class="mb-1">
+          <!-- Instagram -->
+          <a
+            class="btn text-white btn-floating m-1"
+            href="https://www.instagram.com/_cajitadulce/"
+            role="button"
+            target="_blank"
+            ><img src="{% static "img/instragram.png" %}" alt="" />
+          </a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center text-black p-3">© 2022 Copyright:</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

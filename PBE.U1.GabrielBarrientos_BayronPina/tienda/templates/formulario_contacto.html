@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{% static "css/estilo.css" %}">
+
+    <title>Cajita Dulce</title>
+  </head>
+  <body>
+    <!--NAVBAR -->
+    <nav class="navbar navbar-expand-lg" id="barraDeNavegacion">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static "img/Logo Chiquito.png" %}" alt="Logo" id="logo">Cajita Dulce</a>
+
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contacto' %}"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+   <div class="container-fluid text-black">
+       <div class="row justify-content-center ">
+           <div class="col-md-6 m-5">
+               {%  if form.is_valid %}
+                   <p>Contact succesfully created </p>
+                   <a href="{% url 'contacto' %}">Contacto</a>
+
+               {% else %}
+                   <h1>Déjanos tu contacto:</h1>
+                   <p></p>
+                   <form method="post">
+                       {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        <div class="row ">
+                            <div class=" col col-sm-4 col-md-4 mb-3">
+                                <div class="fieldWrapper">
+                                    <label for="{{ form.first_name.id_for_label }}">Primer Nombre:</label>
+                                        {{ form.first_name }}
+                                        {% for error in form.first_name.errors %}
+                                            <p style="color: red;">{{ error }}</p>
+                                        {% endfor %}
+                                </div>
+                            </div>
+                            <div class=" col col-sm-4 col-md-4 mb-3">
+                                <div class="fieldWrapper">
+                                    <label for="{{ form.second_name.id_for_label }}">Segundo Nombre :</label>
+                                    {{ form.second_name }}
+                                    {% for error in form.second_name.errors %}
+                                        <p style="color: red;">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class=" col col-sm-4 col-md-4 mb-3">
+                                <div class="fieldWrapper">
+                                    <label for="{{ form.first_last_name.id_for_label }}">Apellido Paterno:</label>
+                                    {{ form.first_last_name }}
+                                    {% for error in form.first_last_name.errors %}
+                                        <p style="color: red;">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class=" col col-sm-4 col-md-4 mb-3">
+                                <div class="fieldWrapper">
+                                    <label for="{{ form.second_last_name.id_for_label }}">Apellido Materno:</label>
+                                    {{ form.second_last_name }}
+                                    {% for error in form.second_last_name.errors %}
+                                        <p style="color: red;">{{ error }}</p>
+                                    {%  endfor %}
+                                </div>
+                           </div>
+                        </div>
+                       <div class="row ">
+                            <div class=" col col-sm-4 col-md-6 col-lg-3 mb-3">
+                                <div class="fieldWrapper">
+                                    <label for="{{ form.number_prefix.id_for_label }}">Prefijo:</label>
+                                    {{ form.number_prefix }}
+                                    {% for error in form.number_prefix.errors %}
+                                        <p style="color: red;">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class=" col col-sm-4 col-md-4 mb-3">
+                                    <div class="fieldWrapper">
+                                        <label for="{{ form.phone_number.id_for_label }}">Número de teléfono:</label>
+                                        {{ form.phone_number }}
+                                        {% for error in form.phone_number.errors %}
+                                            <p style="color: red;">{{ error }}</p>
+                                        {% endfor %}
+                                    </div>
+                           </div>
+                       </div>
+                        <div class=" col col-sm-4 col-md-4 mb-3">
+                                <div class="fieldWrapper">
+                                    <label for="{{ form.email_adress.id_for_label }}">Correo electrónico:</label>
+                                    {{ form.email_adress }}
+                                    {% for error in form.email_adress.errors %}
+                                        <p style="color: red;">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                        </div>
+                        <div class=" col col-sm-8 col-md-8 mb-3">
+                                <div class="fieldWrapper">
+                                    <label for="{{ form.comment.id_for_label }}">Déjanos un comentario:</label>
+                                    {{ form.comment }}
+                                    {% for error in form.comment.errors %}
+                                        <p style="color: red;">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                        </div>
+                    <button class='btn btn-dark' type="submit">Save</button>
+                   </form>
+               {% endif %}
+           </div>
+       </div>
+    </div>
+   <!-- FOOTER -->
+    <footer class="text-center text-white">
+      <!-- Grid container -->
+      <div class="container container-fluid p-2 pb-0 mt-2">
+        <!-- Section: Social media -->
+        <section class="mb-1">
+          <!-- Instagram -->
+          <a
+            class="btn text-white btn-floating m-1"
+            href="https://www.instagram.com/_cajitadulce/"
+            role="button"
+            target="_blank"
+            ><img src="{% static "img/instragram.png" %}" alt="" />
+          </a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center text-black p-3">© 2022 Copyright:</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+
+
+
