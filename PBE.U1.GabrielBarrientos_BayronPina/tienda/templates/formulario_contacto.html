@@ -1,25 +1,10 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="{% static "css/estilo.css" %}">
-
-    <title>Cajita Dulce</title>
-  </head>
-  <body>
     <!--NAVBAR -->
-    <nav class="navbar navbar-expand-lg" id="barraDeNavegacion">
-      <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static "img/Logo Chiquito.png" %}" alt="Logo" id="logo">Cajita Dulce</a>
-
-
+  
+{% block body %}
+    
         <button
           class="navbar-toggler"
           type="button"
@@ -138,38 +123,12 @@
                                     {% endfor %}
                                 </div>
                         </div>
-                    <button class='btn btn-dark' type="submit">Save</button>
+                    <button class='btn btn-dark' type="submit">Enviar</button>
                    </form>
                {% endif %}
            </div>
        </div>
-    </div>
-   <!-- FOOTER -->
-    <footer class="text-center text-white">
-      <!-- Grid container -->
-      <div class="container container-fluid p-2 pb-0 mt-2">
-        <!-- Section: Social media -->
-        <section class="mb-1">
-          <!-- Instagram -->
-          <a
-            class="btn text-white btn-floating m-1"
-            href="https://www.instagram.com/_cajitadulce/"
-            role="button"
-            target="_blank"
-            ><img src="{% static "img/instragram.png" %}" alt="" />
-          </a>
-        </section>
-        <!-- Section: Social media -->
-      </div>
-      <!-- Grid container -->
-
-      <!-- Copyright -->
-      <div class="text-center text-black p-3">© 2022 Copyright:</div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
-
+    </div> 
+{% endblock body %}
 
 
