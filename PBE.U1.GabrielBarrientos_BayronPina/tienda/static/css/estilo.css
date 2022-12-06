@@ -11,6 +11,7 @@ body {
 #titulo{
     margin-top: 3rem;
     text-align: left;
+    font-family: 'Rock Salt', cursive;
 }
 #logo{
   width: 3rem;
@@ -104,9 +105,12 @@ footer a img{
     text-align: center;
     font-size: 80px;
     color: #ee8ee1;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Rock Salt', cursive;
 }
 #parrafoCard p{
     text-align: center;
-    font-size: 17px;
+    font-size: 18px;
+    font-family: 'Mali', cursive;
+    color: #000000;
+
 }
