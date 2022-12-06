@@ -41,16 +41,24 @@ def contact_table_list(request):
 
     return render(request, 'search_contacts.html', contexto)
 
-def products_list(request):
-    products = Producto.objects.all()
-    rows_count = 1 + int(products.count() / 3)
-    rows = []
-    for row in range(0, rows_count):
-        start_count = row * 4
-        rows.append(products[start_count: start_count +4])
-    
+def products_list_test(request):
+    product_information = Producto.objects.all()
     contexto = {
-        'product_information': rows
+        'product_information' : product_information
     }
 
     return render(request, 'product_list.html', contexto)
+
+# def products_list(request):
+#     products = Producto.objects.all()
+#     rows_count = 1 + int(products.count() / 3)
+#     rows = []
+#     for row in range(0, rows_count):
+#         start_count = row * 4
+#         rows.append(products[start_count: start_count +4])
+    
+#     contexto = {
+#         'product_information': rows
+#     }
+
+#     return render(request, 'product_list.html', contexto)

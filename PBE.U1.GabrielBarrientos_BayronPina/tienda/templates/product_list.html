@@ -3,24 +3,29 @@
 
 {% block body %}
 
-{% for Producto in product_information %}
+{% for product in product_information %}
 <div class="container text-center">
     <div class="row">
-      <div class="col">
-        {% comment %} {{Producto.image}} {% endcomment %}
+      <div class="col-3">
+        <div class="card" style="width: 18rem;">
+            {{product.image}}
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <p class="card-text">{{product.description}}</p>
+            </div>
+          </div>
+         
+      </div>
+      {% comment %} <div class="col">
+        {{Producto.image}}
         {{Producto.name}}
         {{Producto.description}}
       </div>
       <div class="col">
-        {% comment %} {{Producto.image}} {% endcomment %}
+        {{Producto.image}}
         {{Producto.name}}
         {{Producto.description}}
-      </div>
-      <div class="col">
-        {% comment %} {{Producto.image}} {% endcomment %}
-        {{Producto.name}}
-        {{Producto.description}}
-      </div>
+      </div> {% endcomment %}
     </div>
   </div>
   
