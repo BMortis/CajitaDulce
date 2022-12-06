@@ -2,23 +2,21 @@
 
 {% block body %}
 
-    <div class="container-mt3">
-        <div class="row">
-            <div class "col col-sm-auto col-md-10 m-5">
-                <h1>Lista de contactos<h1>
+<div class="container mt-o tabla">
+    <div class="row justify-content-center">
+        <div class "col-sm-6 col-md-6 m-5">
+            <h1>Lista de contactos<h1>
                 <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Primer Nombre</th>
-                            <th>Segundo Nombre</th>
-                            <th>Primer Apellido</th>
-                            <th>Segundo Apellido</th>
-                            <th>Email</th>
-                            <th>Número Telefónico</th>
-                           
-
-                        </tr>
-                    </thead>
+                        <thead>
+                            <tr>
+                                <th>Primer Nombre</th>
+                                <th>Segundo Nombre</th>
+                                <th>Primer Apellido</th>
+                                <th>Segundo Apellido</th>
+                                <th>Email</th>
+                                <th>Número Telefónico</th>
+                            </tr>
+                        </thead>
                     <tbody>
                         {% for person in contact_information %}
                         <tr>
@@ -34,5 +32,6 @@
                 </table>
             </div>
         </div>
-    </div>    
-{% endblock body %}
+    </div>  
+      
+    {% endblock body %}
