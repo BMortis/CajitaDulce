@@ -29,7 +29,7 @@ class Producto(models.Model):
     name = models.CharField(max_length=40, default='')
     description = models.TextField(max_length=100, default='')
     image = models.ImageField(upload_to="productos_img")
-
+    price  = models.CharField(max_length=9, default='')
 
     def __str__(self):
         return self.name

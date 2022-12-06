@@ -2,16 +2,26 @@
 
 
 {% block body %}
-<div class="container justify">
+<div class="container">
+    <div class="row "id="tituloCard"><h2>Productos</h2></div>
+    <div class="row "id="parrafoCard">
+        <p>A continuacion se puede apreciar la variedad de productos con las que cuenta 
+        Cajita Dulce junto a una pequeña fotografia para su deleite visual.</p>                             
+        <p>Tambien se muestra el precio de nuestros productos para una mayor transparencia con nuestros clientes</p>
+        <p>Esperamos se enamoren tanto de nuestros productos como nosotros</p>
+    </div>
+</div>
+<div class="container">
     <div class="row">
     {% for product in product_information %}
 
-      <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
+      <div class="col-4 CartaImagen">
+        <div class="card mb-5">
+            <img src="{{product.image.url}}" class="card-image-top" width="100%" height="200px">
             <div class="card-body">
               <h5 class="card-title">{{product.name}}</h5>
               <p class="card-text">{{product.description}}</p>
+              <p id="price"class="card-text">Precio: ${{product.price}}</p>
             </div>
           </div>
          
