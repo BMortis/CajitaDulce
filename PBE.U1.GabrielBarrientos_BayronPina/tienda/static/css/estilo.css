@@ -82,3 +82,9 @@ footer a img{
     font-weight: 50;
     text-align: justify;
 }
+
+.GridCartas img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

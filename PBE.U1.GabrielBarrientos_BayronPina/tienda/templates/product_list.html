@@ -2,13 +2,13 @@
 
 
 {% block body %}
-
-{% for product in product_information %}
-<div class="container text-center">
+<div class="container justify">
     <div class="row">
-      <div class="col-3">
+    {% for product in product_information %}
+
+      <div class="col-md-4">
         <div class="card" style="width: 18rem;">
-            {{product.image}}
+            <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">{{product.name}}</h5>
               <p class="card-text">{{product.description}}</p>
@@ -16,22 +16,11 @@
           </div>
          
       </div>
-      {% comment %} <div class="col">
-        {{Producto.image}}
-        {{Producto.name}}
-        {{Producto.description}}
-      </div>
-      <div class="col">
-        {{Producto.image}}
-        {{Producto.name}}
-        {{Producto.description}}
-      </div> {% endcomment %}
+   
+      {% endfor %}
     </div>
-  </div>
-  
-      
-  {% endfor %}
-
+</div>
+    
 
 
 {% endblock body %}
